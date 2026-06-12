@@ -51,7 +51,7 @@
                                 type="password">
                             <button aria-label="${msg("showPassword")}" class="btn btn-xs btn-ghost btn-circle" id="password-toggle" type="button">
                                 <span class="iconify lucide--eye size-4" id="eye-icon"></span>
-                                <span class="iconify lucide--eye-off hidden size-4" id="eye-off-icon"></span>
+                                <span class="iconify lucide--eye-off size-4" id="eye-off-icon" style="display: none"></span>
                             </button>
                         </label>
                         <#if usernameHidden?? && messagesPerField.existsError('username','password')>

@@ -17,8 +17,8 @@
             passwordToggle.addEventListener("click", function () {
                 var show = password.type === "password";
                 password.type = show ? "text" : "password";
-                document.getElementById("eye-icon").classList.toggle("hidden", show);
-                document.getElementById("eye-off-icon").classList.toggle("hidden", !show);
+                document.getElementById("eye-icon").style.display = show ? "none" : "";
+                document.getElementById("eye-off-icon").style.display = show ? "" : "none";
             });
         }
     }
