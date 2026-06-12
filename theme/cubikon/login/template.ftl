@@ -35,7 +35,7 @@
 <body class="${bodyClass}">
     <div class="flex min-h-screen items-center justify-center p-4">
         <main class="card bg-base-100 w-full max-w-md shadow-xl">
-            <div class="flex flex-col items-stretch p-6 md:p-8">
+            <div class="flex flex-col items-stretch p-6 md:p-10">
 
                 <div class="flex items-center justify-between">
                     <a class="flex items-center gap-2" href="${properties.logoLink!'#'}">

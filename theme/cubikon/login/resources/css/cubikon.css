@@ -1,22 +1,30 @@
 /* Cubikon theme — minimal reset, Tailwind-style utilities and lucide icons.
    daisyUI (css/daisyui.css) provides the component classes and theme colors. */
 
-/* --- Reset (daisyUI expects Tailwind preflight) --- */
-*, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: currentColor; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    background-color: var(--color-base-200);
-    color: var(--color-base-content);
+/* --- Reset (daisyUI expects Tailwind preflight).
+   Wrapped in @layer base so daisyUI's component layer keeps priority
+   (an unlayered border reset would strip input/button borders). --- */
+@layer base {
+    *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: currentColor; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        background-color: var(--color-base-200);
+        color: var(--color-base-content);
+    }
+    h1, h2, h3, h4, p, fieldset, legend, ul { margin: 0; padding: 0; }
+    fieldset { border: 0; min-width: 0; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: inline-block; vertical-align: middle; }
+    button, input, select { font: inherit; color: inherit; }
 }
-h1, h2, h3, h4, p, fieldset, legend, ul { margin: 0; padding: 0; }
-fieldset { border: 0; min-width: 0; }
-ul { list-style: none; }
-a { color: inherit; text-decoration: none; }
-img, svg { display: inline-block; vertical-align: middle; }
-button, input, select { font: inherit; color: inherit; }
+
+/* --- Component tweaks: more vertical breathing room than daisyUI defaults --- */
+.fieldset { gap: 0.5rem; padding-block: 0.625rem; }
+.fieldset-legend { margin-bottom: 0; }
 
 /* --- Layout utilities --- */
 .flex { display: flex; }
@@ -29,7 +37,7 @@ button, input, select { font: inherit; color: inherit; }
 .gap-1 { gap: 0.25rem; }
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 0.75rem; }
-.hidden { display: none; }
+.hidden { display: none !important; }
 .z-10 { z-index: 10; }
 
 /* --- Sizing --- */
@@ -49,6 +57,7 @@ button, input, select { font: inherit; color: inherit; }
 .p-6 { padding: 1.5rem; }
 .mt-1 { margin-top: 0.25rem; }
 .mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
 .mt-4 { margin-top: 1rem; }
 .mt-6 { margin-top: 1.5rem; }
 .mt-8 { margin-top: 2rem; }
@@ -81,6 +90,7 @@ button, input, select { font: inherit; color: inherit; }
 /* --- Responsive (md: 768px) --- */
 @media (min-width: 768px) {
     .md\:p-8 { padding: 2rem; }
+    .md\:p-10 { padding: 2.5rem; }
     .md\:mt-6 { margin-top: 1.5rem; }
     .md\:mt-8 { margin-top: 2rem; }
     .md\:mt-10 { margin-top: 2.5rem; }
