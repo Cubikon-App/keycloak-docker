@@ -33,8 +33,8 @@
     </#if>
 </head>
 <body class="${bodyClass}">
-    <div class="flex min-h-screen items-center justify-center p-4">
-        <main class="card bg-base-100 w-full max-w-md shadow-xl">
+    <div class="cubikon-page">
+        <main class="card bg-base-100 border-base-300 w-full max-w-md border shadow-xl">
             <div class="flex flex-col items-stretch p-6 md:p-10">
 
                 <div class="flex items-center justify-between">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <h3 class="mt-8 text-center text-xl font-semibold md:mt-10">
+                <h3 class="mt-6 text-center text-2xl font-semibold md:mt-8">
                     <#nested "header">
                 </h3>
 

@@ -10,7 +10,7 @@
         </p>
 
         <#if realm.password>
-            <div class="mt-6 md:mt-8">
+            <div class="mt-4 md:mt-6">
                 <form action="${url.loginAction}" id="kc-form-login" method="post" onsubmit="login.disabled = true; return true;">
 
                     <#if !usernameHidden??>
@@ -62,7 +62,7 @@
                     </fieldset>
 
                     <#if realm.resetPasswordAllowed>
-                        <div class="text-end">
+                        <div class="mt-1 text-end">
                             <a class="text-base-content/80 text-xs hover:underline" href="${url.loginResetCredentialsUrl}">
                                 ${msg("doForgotPassword")}
                             </a>
@@ -84,7 +84,7 @@
                     <input id="id-hidden-input" name="credentialId" type="hidden"
                         <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>>
 
-                    <button class="btn btn-primary btn-wide mt-4 max-w-full gap-3 md:mt-6" id="kc-login" name="login" type="submit">
+                    <button class="btn btn-primary btn-block mt-4 gap-3 md:mt-6" id="kc-login" name="login" type="submit">
                         <span class="iconify lucide--log-in size-4"></span>
                         ${msg("doLogIn")}
                     </button>
@@ -96,7 +96,7 @@
         <#if realm.password && social?? && social.providers?has_content>
             <div class="divider text-base-content/60 mt-6 text-xs">${msg("identity-provider-login-label")}</div>
             <#list social.providers as p>
-                <a class="btn btn-ghost btn-wide border-base-300 mt-2 max-w-full gap-3" href="${p.loginUrl}" id="social-${p.alias}">
+                <a class="btn btn-ghost btn-block border-base-300 mt-2 gap-3" href="${p.loginUrl}" id="social-${p.alias}">
                     <img alt="" class="size-6" onerror="this.remove()" src="${url.resourcesPath}/img/${p.alias}-mini.svg">
                     ${p.displayName!}
                 </a>
