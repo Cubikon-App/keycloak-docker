@@ -49,9 +49,9 @@
                                 name="password"
                                 placeholder="${msg("password")}"
                                 type="password">
-                            <button aria-label="${msg("showPassword")}" class="btn btn-xs btn-ghost btn-circle" id="password-toggle" type="button">
-                                <span class="iconify lucide--eye size-4" id="eye-icon"></span>
-                                <span class="iconify lucide--eye-off size-4" id="eye-off-icon" style="display: none"></span>
+                            <button aria-label="${msg("showPassword")}" class="btn btn-xs btn-ghost btn-circle password-toggle" data-target="password" type="button">
+                                <span class="iconify lucide--eye eye-icon size-4"></span>
+                                <span class="iconify lucide--eye-off eye-off-icon size-4" style="display: none"></span>
                             </button>
                         </label>
                         <#if usernameHidden?? && messagesPerField.existsError('username','password')>
